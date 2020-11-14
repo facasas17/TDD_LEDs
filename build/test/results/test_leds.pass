@@ -1,0 +1,46 @@
+---
+:source:
+  :path: test
+  :file: test_leds.c
+:successes:
+- :test: test_LedsOffAfterCreate
+  :line: 29
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_led_individual
+  :line: 37
+  :message: ''
+  :unity_test_time: 0
+- :test: test_apagar_led_individual
+  :line: 44
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_apagar_multiples
+  :line: 52
+  :message: ''
+  :unity_test_time: 0
+- :test: test_prender_led_invalido
+  :line: 60
+  :message: ''
+  :unity_test_time: 0
+- :test: test_All_Leds_Off
+  :line: 66
+  :message: ''
+  :unity_test_time: 0
+- :test: test_All_Leds_On
+  :line: 72
+  :message: ''
+  :unity_test_time: 0
+- :test: test_estado_led
+  :line: 78
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 8
+  :passed: 8
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.0013733319974562619

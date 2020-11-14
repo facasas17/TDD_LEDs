@@ -2,9 +2,6 @@
 #include "leds.h"
 
 /**
- * Se pueden apagar todos los LEDs de una vez
- * Se pueden prender todos los LEDs de una vez
- * Se puede consultar el estado de un LED
  * Revisar limites de los parametros
  * */
 
@@ -12,15 +9,15 @@
 
 uint16_t ledsVirtuales;
 
-_Bool error_informado = FALSE;
+bool error_informado = false;
 
 void RegistrarError(void){
-    error_informado = TRUE;
+    error_informado = true;
 }
 
 void setUp( void ){
     // Funciones optativas las crea el ceedling si no las defino. Se ejecuta antes de cada test
-    error_informado = FALSE;
+    error_informado = false;
     Leds_Create(&ledsVirtuales, RegistrarError);
 }
 
@@ -30,7 +27,7 @@ void tearDown( void ){
 
 // Despues de inicializar, los LEDs quedan apagados
 void test_LedsOffAfterCreate( void ){
-    uint16_t ledsVirtuales = 0xFFFF;             //Leds en 1
+    uint16_t ledsVirtuales = LEDS_ALL_ON;             //Leds en 1
 
     Leds_Create(&ledsVirtuales, RegistrarError); //Llamo a la funcion
     TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);  // Comparo el resultado contra 0
@@ -65,3 +62,21 @@ void test_prender_led_invalido(void){
     TEST_ASSERT_TRUE(error_informado);   
 }
 
+// Se pueden apagar todos los LEDs de una vez
+void test_All_Leds_Off(void){
+    All_Leds_Off();
+    TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
+}
+
+// Se pueden encender todos los LEDs de una vez
+void test_All_Leds_On(void){
+    All_Leds_On();
+    TEST_ASSERT_EQUAL_HEX16(LEDS_ALL_ON, ledsVirtuales);
+}
+
+// Se puede consultar el estado de un LED
+void test_estado_led( void ){
+    Leds_On(5);     // Enciendo el LED 2
+    get_Led(5);     // Consulto el estado del LED 2
+    TEST_ASSERT_EQUAL_HEX16(1 << 4, ledsVirtuales);  // Chequeo que el bit 4 quede encendido
+}

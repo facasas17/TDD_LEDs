@@ -15,6 +15,9 @@ extern void test_prender_led_individual(void);
 extern void test_apagar_led_individual(void);
 extern void test_prender_apagar_multiples(void);
 extern void test_prender_led_invalido(void);
+extern void test_All_Leds_Off(void);
+extern void test_All_Leds_On(void);
+extern void test_estado_led(void );
 
 
 /*=======Mock Management=====*/
@@ -79,11 +82,14 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 24);
-  run_test(test_prender_led_individual, "test_prender_led_individual", 32);
-  run_test(test_apagar_led_individual, "test_apagar_led_individual", 39);
-  run_test(test_prender_apagar_multiples, "test_prender_apagar_multiples", 47);
-  run_test(test_prender_led_invalido, "test_prender_led_invalido", 56);
+  run_test(test_LedsOffAfterCreate, "test_LedsOffAfterCreate", 29);
+  run_test(test_prender_led_individual, "test_prender_led_individual", 37);
+  run_test(test_apagar_led_individual, "test_apagar_led_individual", 44);
+  run_test(test_prender_apagar_multiples, "test_prender_apagar_multiples", 52);
+  run_test(test_prender_led_invalido, "test_prender_led_invalido", 60);
+  run_test(test_All_Leds_Off, "test_All_Leds_Off", 66);
+  run_test(test_All_Leds_On, "test_All_Leds_On", 72);
+  run_test(test_estado_led, "test_estado_led", 78);
 
   return UnityEnd();
 }
