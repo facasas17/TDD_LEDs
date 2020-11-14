@@ -76,7 +76,9 @@ void test_All_Leds_On(void){
 
 // Se puede consultar el estado de un LED
 void test_estado_led( void ){
-    Leds_On(5);     // Enciendo el LED 2
-    get_Led(5);     // Consulto el estado del LED 2
-    TEST_ASSERT_EQUAL_HEX16(1 << 4, ledsVirtuales);  // Chequeo que el bit 4 quede encendido
+    bool estado;
+
+    Leds_Off(5);     // Enciendo el LED 5
+    estado = get_Led(5);     // Consulto el estado del LED 5
+    TEST_ASSERT_EQUAL_HEX16( 0 , estado);  // Chequeo que el estado sea encendido
 }

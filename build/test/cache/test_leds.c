@@ -193,14 +193,22 @@ void test_All_Leds_On(void){
 
 void test_estado_led( void ){
 
-    Leds_On(5);
+    
 
-    get_Led(5);
+   _Bool 
 
-    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1 << 4)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
+        estado;
+
+
+
+    Leds_Off(5);
+
+    estado = get_Led(5);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((estado)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(81), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(83), UNITY_DISPLAY_STYLE_HEX16);
 
 }
