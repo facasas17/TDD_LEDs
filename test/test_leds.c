@@ -1,10 +1,6 @@
 #include "unity.h"
 #include "leds.h"
 
-/**
- * Revisar limites de los parametros
- * */
-
 //#include "mock_errores.h"   // Genera una función ficticia del header en errores.h
 
 uint16_t ledsVirtuales;

@@ -1,5 +1,4 @@
 #include "leds.h"
-//#include "errores.h"
 
 static LedError_t RegistrarError;
 
