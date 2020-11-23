@@ -60,12 +60,14 @@ void test_prender_led_invalido(void){
 
 // Se pueden apagar todos los LEDs de una vez
 void test_All_Leds_Off(void){
+    All_Leds_On();
     All_Leds_Off();
     TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
 }
 
 // Se pueden encender todos los LEDs de una vez
 void test_All_Leds_On(void){
+    All_Leds_Off();
     All_Leds_On();
     TEST_ASSERT_EQUAL_HEX16(LEDS_ALL_ON, ledsVirtuales);
 }
