@@ -7,14 +7,6 @@
 
 
 
-
-
-
-
-
-
-
-
 uint16_t ledsVirtuales;
 
 
@@ -81,7 +73,7 @@ void test_LedsOffAfterCreate( void ){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(33), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -99,7 +91,7 @@ void test_prender_led_individual(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(40), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(36), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -119,7 +111,7 @@ void test_apagar_led_individual(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(48), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(44), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -139,7 +131,7 @@ void test_prender_apagar_multiples(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(56), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(52), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -151,7 +143,7 @@ void test_prender_led_invalido(void){
 
     Leds_On(17);
 
-    do {if ((error_informado)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(62)));}} while(0);
+    do {if ((error_informado)) {} else {UnityFail( ((" Expected TRUE Was FALSE")), (UNITY_UINT)((UNITY_UINT)(58)));}} while(0);
 
 }
 
@@ -167,7 +159,7 @@ void test_All_Leds_Off(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(68), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(64), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -183,7 +175,7 @@ void test_All_Leds_On(void){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(74), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(70), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -191,7 +183,7 @@ void test_All_Leds_On(void){
 
 
 
-void test_estado_led( void ){
+void test_estado_led_Off( void ){
 
     
 
@@ -209,6 +201,34 @@ void test_estado_led( void ){
 
    ((void *)0)
 
-   ), (UNITY_UINT)(83), UNITY_DISPLAY_STYLE_HEX16);
+   ), (UNITY_UINT)(79), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
+
+
+
+void test_estado_led_On( void ){
+
+    
+
+   _Bool 
+
+        estado;
+
+
+
+    Leds_On(5);
+
+    estado = get_Led(5);
+
+    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((1)), (UNITY_INT)(UNITY_INT16)((estado)), (
+
+   ((void *)0)
+
+   ), (UNITY_UINT)(89), UNITY_DISPLAY_STYLE_HEX16);
 
 }

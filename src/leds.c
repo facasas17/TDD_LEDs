@@ -38,5 +38,6 @@ bool get_Led(uint8_t led){
     uint16_t estado = * direccion;
 
     estado &= LedToMask(led);
-    return estado;
+
+    return (bool)estado;
 }

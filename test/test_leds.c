@@ -70,11 +70,21 @@ void test_All_Leds_On(void){
     TEST_ASSERT_EQUAL_HEX16(LEDS_ALL_ON, ledsVirtuales);
 }
 
-// Se puede consultar el estado de un LED
-void test_estado_led( void ){
+// Se puede consultar el estado de un LED apagado
+void test_estado_led_Off( void ){
     bool estado;
 
     Leds_Off(5);     // Enciendo el LED 5
     estado = get_Led(5);     // Consulto el estado del LED 5
     TEST_ASSERT_EQUAL_HEX16( 0 , estado);  // Chequeo que el estado sea encendido
+}
+
+
+// Se puede consultar el estado de un LED encendido
+void test_estado_led_On( void ){
+    bool estado;
+
+    Leds_On(5);     // Enciendo el LED 5
+    estado = get_Led(5);     // Consulto el estado del LED 5
+    TEST_ASSERT_EQUAL_HEX16( 1 , estado);  // Chequeo que el estado sea encendido
 }
